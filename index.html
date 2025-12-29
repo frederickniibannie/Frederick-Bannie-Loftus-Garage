@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loftus Garage| Buy Cars in Ghana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome (WhatsApp icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="logo">🚗 Loftus GARAGE</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#cars">Cars</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Buy Quality Cars in Ghana</h1>
+        <p>Trusted Dealer • Fair Prices • Fast WhatsApp Support</p>
+        <a href="#cars" class="hero-btn">Browse Available Cars</a>
+    </div>
+</section>
+
+<!-- ================= FILTER SECTION ================= -->
+<section class="filter-section">
+    <h2>Find Your Car</h2>
+
+    <div class="filters">
+        <!-- Price -->
+        <input type="text" id="minPrice" placeholder="Min Price (GHS)">
+        <input type="text" id="maxPrice" placeholder="Max Price (GHS)">
+
+        <!-- Brand -->
+        <input type="text" id="brandFilter" placeholder="Brand (e.g Toyota, BMW)">
+
+        <!-- Condition -->
+        <select id="conditionFilter">
+            <option value="">Any Condition</option>
+            <option value="Used">Used</option>
+            <option value="Brand New">Brand New</option>
+        </select>
+
+        <!-- Button -->
+        <button id="filterBtn">
+            <i class="fas fa-filter"></i> Apply Filter
+        </button>
+    </div>
+</section>
+
+<!-- ================= INVENTORY ================= -->
+<section class="inventory" id="cars">
+    <div class="car-grid" id="carGrid">
+        <!-- Cars are injected here by script.js -->
+    </div>
+</section>
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a href="https://wa.me/233243495780"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+    <p>© 2025 Loftus Garage — Trusted Car Dealer in Ghana</p>
+    <p>Call / WhatsApp: +233 24 349 5780</p>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>

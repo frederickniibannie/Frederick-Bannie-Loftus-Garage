@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #c5c7c9;
+}
+
+/* HEADER */
+header {
+    background: #0d1b2a;
+    color: #f6ff00;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #47ed6b;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* FILTER */
+.filter-section {
+    background: #4f4d4d;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filters input {
+    padding: 10px;
+    width: 180px;
+}
+
+.filters button {
+    background: #1b9aaa;
+    color: #291b92;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* INVENTORY */
+.inventory {
+    padding: 20px;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.car-card {
+    background: #a29e9e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.car-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 15px;
+}
+
+.car-info h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.car-info p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #041b1e;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contact-btn {
+    display: block;
+    margin-top: 10px;
+    background: #243e5f;
+    color: #b9b915;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: #fff;
+    font-size: 34px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* FOOTER */
+footer {
+    background: #0d1b2a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("pexels-04iraq-1272398525-29603032.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c0bbbb;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    background: #dd0606;
+    color: #bec330;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+/* ===== ANIMATIONS ===== */
+
+/* Fade + slide */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HERO animation */
+.hero-content {
+    animation: fadeUp 1.2s ease forwards;
+}
+
+/* CAR CARDS */
+.car-card {
+    animation: fadeUp 0.8s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* BUTTON HOVER */
+.hero-btn,
+.filters button,
+.contact-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn:hover,
+.filters button:hover,
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* WhatsApp pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-float {
+    animation: pulse 1.5s infinite;
+}
