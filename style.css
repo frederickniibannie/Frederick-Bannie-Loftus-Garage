@@ -137,13 +137,14 @@ footer {
     background: #0d1b2a;
     color: #fff;
     text-align: center;
+    text-emphasis-position: unset;
     padding: 15px;
     margin-top: 40px;
 }
 
 /* HERO */
 .hero {
-    height: 80vh;
+    height: 75vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url("pexels-04iraq-1272398525-29603032.jpg");
     background-size: cover;
@@ -151,7 +152,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #c0bbbb;
+    color: #928e8e;
     text-align: center;
 }
 
@@ -195,7 +196,7 @@ footer {
 
 /* CAR CARDS */
 .car-card {
-    animation: fadeUp 0.8s ease forwards;
+    animation: fadeUp 0.6s ease forwards;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -227,4 +228,116 @@ footer {
 
 .whatsapp-float {
     animation: pulse 1.5s infinite;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+    position: relative;
+}
+
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.carousel {
+    position: relative;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel button.prev,
+.carousel button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel button.prev { left: 10px; }
+.carousel button.next { right: 10px; }
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.thumbnails img.active {
+    border-color: #dd0606;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+
+  overflow-y: auto; /* 🔥 THIS IS THE KEY */
+  border-radius: 12px;
+  padding: 20px;
 }

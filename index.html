@@ -26,7 +26,7 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-content">
-        <h1>Buy Quality Cars in Ghana</h1>
+        <h1>Buy Quality Cars in Ghana @ Loftus Garage</h1>
         <p>Trusted Dealer • Fair Prices • Fast WhatsApp Support</p>
         <a href="#cars" class="hero-btn">Browse Available Cars</a>
     </div>
@@ -58,6 +58,7 @@
     </div>
 </section>
 
+
 <!-- ================= INVENTORY ================= -->
 <section class="inventory" id="cars">
     <div class="car-grid" id="carGrid">
@@ -66,18 +67,48 @@
 </section>
 
 <!-- ================= FLOATING WHATSAPP ================= -->
-<a href="https://wa.me/233243495780"
+<a href="https://wa.me/233541682058"
    class="whatsapp-float"
    target="_blank"
    aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- Modal -->
+<div id="carModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <!-- Top-left car name -->
+    <h2 id="modalCarName" style="text-align:left;"></h2>
+    
+    <!-- Video Section -->
+    <video id="modalVideo" controls width="100%" style="max-height:400px; margin-bottom:20px;">      
+      <source src="uhd_60fps.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Image Carousel -->
+    <div class="carousel">
+      <button class="prev">&#10094;</button>
+      <img src="varun-palaniappan-_JkqGe0ufU8-unsplash.jpg" alt="">
+      <button class="next">&#10095;</button>
+    </div>
+    
+    
+    <!-- Thumbnails -->
+    <div id="carouselThumbs" class="thumbnails"></div>
+    
+  </div>
+</div>
+
 
 <!-- ================= FOOTER ================= -->
 <footer id="contact">
     <p>© 2025 Loftus Garage — Trusted Car Dealer in Ghana</p>
-    <p>Call / WhatsApp: +233 24 349 5780</p>
+    <p>Call / WhatsApp: +233 54 168 2058</p>
+   <a>Visit our Social Media platforms</a> 
+
+    <p>TIKTOK</p>
 </footer>
 
 <!-- ================= JAVASCRIPT ================= -->

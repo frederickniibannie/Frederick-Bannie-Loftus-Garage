@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const cars = [
+      const cars = [
         // ===== ORIGINAL CARS =====
         {
             name: "Toyota Corolla",
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
             price: 140000,
             available: true,
             img: "krish-parmar-q1bBfWG1G1E-unsplash.jpg"
+            
+            
         },
         {
             name: "Honda Accord",
@@ -48,14 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
             year: 2022,
             condition: "Brand New",
             mileage: "0 km",
-            price: 1850000,
+            price: 2850000,
             available: true,
             img: "varun-palaniappan-_JkqGe0ufU8-unsplash.jpg"
+           
         },
         {
             name: "Toyota Hilux",
             brand: "Toyota",
-            year: 2018,
+            year: 201,
             condition: "Used",
             mileage: "60,000 km",
             price: 120000,
@@ -125,15 +128,17 @@ document.addEventListener("DOMContentLoaded", function () {
             img: "zoshua-colah-pRGsIjCvUrA-unsplash.jpg"
         },
         {
-            name: "Mazda CX-5",
-            brand: "Mazda",
+            name: "Honda Civic R",
+            brand: "Honda",
             year: 2020,
             condition: "Used",
             mileage: "40,000 km",
             price: 155000,
             available: true,
-            img: "duc-van-Kpkarn5Ezx8-unsplash.jpg"
+            img: "joao-melo-GgI0J1hpDPY-unsplash.jpg"
+            
         }
+
     ];
 
     const grid = document.getElementById("carGrid");
@@ -143,12 +148,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const brandInput = document.getElementById("brandFilter");
     const conditionInput = document.getElementById("conditionFilter");
 
-    // Remove commas and convert to number
     function parseNumber(value) {
         return Number(value.replace(/,/g, "")) || 0;
     }
 
-    // Format number inputs with commas
     function formatWithCommas(input) {
         input.addEventListener("input", () => {
             let raw = input.value.replace(/,/g, "");
@@ -160,6 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     formatWithCommas(minInput);
     formatWithCommas(maxInput);
+
+    // Modal elements
+    const modal = document.getElementById("carModal");
+    const closeBtn = document.querySelector(".modal .close");
 
     function displayCars(list) {
         grid.innerHTML = "";
@@ -177,10 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
             card.className = "car-card";
             card.style.animationDelay = `${index * 0.08}s`;
 
-            const message = encodeURIComponent(
-                `Loftus Garage 👋\n\nI'm interested in this car:\n• ${car.name}\n• Year: ${car.year}\n• Condition: ${car.condition}\n• Price: GHS ${car.price.toLocaleString()}\n\nIs it still available?`
-            );
-
             card.innerHTML = `
                 <img src="${car.img}" alt="${car.name}">
                 <div class="car-info">
@@ -190,15 +193,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>Condition: ${car.condition}</p>
                     <p>Mileage: ${car.mileage}</p>
                     <p class="price">GHS ${car.price.toLocaleString()}</p>
-                    <a class="contact-btn"
-                       href="https://wa.me/233243495780?text=${message}"
-                       target="_blank">
-                       View Details
-                    </a>
+                    <button class="contact-btn view-details">View Details</button>
                 </div>
             `;
 
             grid.appendChild(card);
+        });
+
+        // Add click listener to all newly created View Details buttons
+        document.querySelectorAll(".view-details").forEach(btn => {
+            btn.addEventListener("click", () => {
+                modal.style.display = "block";
+            });
         });
     }
 
@@ -221,8 +227,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filterBtn.addEventListener("click", filterCars);
 
-    // Initial load: show only available cars
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Initial display
     displayCars(cars.filter(car => car.available === true));
 
 });
+
+document.body.style.overflow = "hidden";
+
+document.body.style.overflow = "auto";
 
